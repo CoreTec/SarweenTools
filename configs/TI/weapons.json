@@ -12,8 +12,8 @@
 	destroyerAfb:{
 		hit: 9,
 		hitCount: 2,
-		validTargets: ['fighter'],
-		preCombat: 100 //weapons that have pre Combat won't shoot during combat
+		validTargets: ["fighter"],
+		preCombat: 100 //weapons that have pre Combat won"t shoot during combat
 	},
 	dreadnought:{
 		hit: 5
@@ -108,7 +108,7 @@
 	flagshipSaarAfb:{
 		hit: 6,
 		hitCount: 4,
-		validTargets: ['fighter'],
+		validTargets: ["fighter"],
 		preCombat: 100
 	},
 	flagshipSardakk:{
@@ -127,7 +127,7 @@
 		hitCount: 2
 	},
 	flagshipXxchaPds:{
-		inherit: 'pds',
+		inherit: "pds",
 		range: 1
 	},
 	flagshipYssaril:{

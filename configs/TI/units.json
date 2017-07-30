@@ -2,21 +2,21 @@
 	carrier:{
 		spaceCombat: true,
 		capacity: 6,
-		weapons: ['carrier'],
+		weapons: ["carrier"],
 		speed: 1,
 		hits: 1,
 		cost: 32
 	},
 	cruiser:{
 		spaceCombat: true,
-		weapons: ['cruiser'],
+		weapons: ["cruiser"],
 		speed: 2,
 		hits: 1,
 		cost: 2
 	},
 	destroyer:{
 		spaceCombat: true,
-		weapons: ['destroyer', 'destroyerAfb'],
+		weapons: ["destroyer", "destroyerAfb"],
 		speed: 2,
 		hits: 1,
 		cost: 1
@@ -24,16 +24,16 @@
 	dreadnought:{
 		spaceCombat: true,
 		groundCombat: true,
-		weapons: ['dreadnought'],
-		groundWeapons: ['dreadnoughtGround'],
+		weapons: ["dreadnought"],
+		groundWeapons: ["dreadnoughtGround"],
 		speed: 1,
 		hits: 2,
 		cost: 5
 	},
 	fighter:{
 		spaceCombat: true,
-		weapons: ['fighter'],
-		groundWeapons: ['fighter'],//added for ground fights
+		weapons: ["fighter"],
+		groundWeapons: ["fighter"],
 		speed: 0,
 		hits: 1,
 		cost: 0.5,
@@ -42,7 +42,7 @@
 	},
 	ground:{
 		groundCombat: true,
-		groundWeapons: ['ground'],
+		groundWeapons: ["ground"],
 		speed: 0,
 		hits: 1,
 		cost: 0.5,
@@ -51,7 +51,7 @@
 	},
 	mechanized:{
 		groundCombat: true,
-		groundWeapons: ['mechanized'],
+		groundWeapons: ["mechanized"],
 		speed: 0,
 		hits: 2,
 		cost: 2,
@@ -61,8 +61,8 @@
 	pds:{
 		groundCombat: true,
 		spaceCombat: true,
-		weapons: ['pds'],
-		groundWeapons: ['pdsGround'],
+		weapons: ["pds"],
+		groundWeapons: ["pdsGround"],
 		speed: 0,
 		hits: 0,
 		cost: 2,
@@ -71,7 +71,7 @@
 	},
 	shock:{
 		groundCombat: true,
-		groundWeapons: ['shock'],
+		groundWeapons: ["shock"],
 		speed: 0,
 		hits: 1,
 		cost: -1,
@@ -82,14 +82,13 @@
 	warsun:{
 		spaceCombat: true,
 		groundCombat: true,
-		weapons: ['warsun'],
-		groundWeapons: ['warsunGround'],
+		weapons: ["warsun"],
+		groundWeapons: ["warsunGround"],
 		speed: 2,
 		hits: 2,
 		cost: 12,
 		buildable: false
 	},
-	//structures
 	dock:{
 		speed: 0,
 		cost: 3,
