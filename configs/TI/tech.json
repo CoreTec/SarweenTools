@@ -1,5 +1,5 @@
+//anything with code is handled in effects instead of other places
 {
-	//red
 	assaultCannon:{
 		color: "red",
 		name: "Assault Cannon",
@@ -95,7 +95,6 @@
 			}
 		}
 	}
-	//blue
 	advancedFighters:{
 		color: "blue",
 		name: "Advanced Fighters",
@@ -174,7 +173,6 @@
 			}
 		}
 	},
-	//green
 	cybernetics:{
 		color: "green",
 		name: "Cybernetics",
@@ -252,7 +250,6 @@
 			effects_push:["x89BacterialWeapon"]
 		}
 	},
-	//yellow
 	enviroCompensator:{
 		color: "yellow",
 		name: "Enviro Compensator",
@@ -317,16 +314,14 @@
 			effects_push:["transitDiodes"]
 		}
 	},
-	//racials
-	//arborec
-	beingArborec:{//given at start
+	beingArborec:{
 		hidden: true,
 		changePlayer:{
 			effects_push:["arborecCantBuildGF","arborecGrantGF"]
 		},
 		changeUnits:{
 			ground:{
-				buildCapacity_set: 1//order matters
+				buildCapacity_set: 1
 			}
 		}
 	},
@@ -350,8 +345,7 @@
 			}
 		}
 	},
-	//Creuss
-	beingCreuss:{//given at start
+	beingCreuss:{
 		hidden: true,
 		changePlayer:{
 			effects_push:["creussABWormholes","creussWormholesUnrestricted","creussBlocksWormholes"]
@@ -363,7 +357,7 @@
 		hideIfNoPrereq: true,
 		additionalCost: 3,
 		changePlayer:{
-			effects_push:["dimensionalSplicers"]//anything with code is handled in effects instead of other places
+			effects_push:["dimensionalSplicers"]
 		}
 	},
 	slaveWormholeGenerator:{
@@ -375,8 +369,7 @@
 			effects_push:["slaveWormholeGenerator"]
 		}
 	},
-	//Hacan
-	beingHacan:{//given at start
+	beingHacan:{
 		hidden: true,
 		changePlayer:{
 			effects_push:["hacanTradesActionCards","hacanAgreementsCantBeBroken"],
@@ -389,7 +382,7 @@
 		hideIfNoPrereq: true,
 		additionalCost: 3,
 		changePlayer:{
-			effects_push:["productionCenters"]//anything with code is handled in effects instead of other places
+			effects_push:["productionCenters"]
 		}
 	},
 	quantumDatahubNode:{
@@ -401,13 +394,12 @@
 			effects_push:["quantumDatahubNode"]
 		}
 	},
-	//Jolnar
-	beingJolnar:{//given at start
+	beingJolnar:{
 		hidden: true,
 		changePlayer:{
 			effects_push:["jolnarReroll","jolnarTechnology"]
 		},
-		changeWeapons:{//ugh... have to "invent" _all
+		changeWeapons:{
 			_all:{
 				hit_add: -1
 			}
@@ -431,8 +423,7 @@
 			effects_push:["electroResonanceTurbines"]
 		}
 	},
-	//Letnev
-	beingLetnev:{//given at start
+	beingLetnev:{
 		hidden: true,
 		changePlayer:{
 			effects_push:["letnevGFBuff","letnevSpaceBuff"],
@@ -458,8 +449,7 @@
 			effects_push:["noneuclidianShielding"]
 		}
 	},
-	//Lizix
-	beingLizix:{//given at start
+	beingLizix:{
 		hidden: true,
 		changePlayer:{
 			startingStrategyAllocation_add: 1,
@@ -467,12 +457,12 @@
 		},
 		changeUnits:{
 			drednought:{
-				cost_set: 4//rules directly state to SET it to 4
+				cost_set: 4
 			}
 		},
 		changeWeapons:{
 			drednought:{
-				hit_add: 1//ground is not added
+				hit_add: 1
 			}
 		}
 	},
@@ -497,8 +487,7 @@
 			effects_push:["inheritanceSystems"]
 		}
 	},
-	//Mentak
-	beingMentak:{//given at start
+	beingMentak:{
 		hidden: true,
 		changePlayer:{
 			startingFleetSupply_add: 1,

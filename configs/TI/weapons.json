@@ -13,7 +13,7 @@
 		hit: 9,
 		hitCount: 2,
 		validTargets: ["fighter"],
-		preCombat: 100 //weapons that have pre Combat won"t shoot during combat
+		preCombat: 100
 	},
 	dreadnought:{
 		hit: 5
@@ -57,7 +57,6 @@
 		hitCount: 3,
 		preCombat: 20
 	},
-	//flagships
 	flagshipArborec:{
 		hit: 6,
 		hitCount: 2
@@ -83,7 +82,7 @@
 	},
 	flagshipLizix:{
 		hit: 5,
-		hitCount: 3 //special ability is separate
+		hitCount: 3
 	},
 	flagshipMentak:{
 		hit: 5,
@@ -112,7 +111,7 @@
 		preCombat: 100
 	},
 	flagshipSardakk:{
-		hit: 5, //discard +1 from sardakk racial and from flagship
+		hit: 5,
 		hitCount: 3
 	},
 	flagshipSol:{
