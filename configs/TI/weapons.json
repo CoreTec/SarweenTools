@@ -1,0 +1,141 @@
+//try to keep names to just 1 word. Second word should be reserved for subtype - see "destroyerAfb"
+{
+	carrier:{
+		hit: 9
+	},
+	cruiser:{
+		hit: 7
+	},
+	destroyer:{
+		hit: 9
+	},
+	destroyerAfb:{
+		hit: 9,
+		hitCount: 2,
+		validTargets: ['fighter'],
+		preCombat: 100 //weapons that have pre Combat won't shoot during combat
+	},
+	dreadnought:{
+		hit: 5
+	},
+	dreadnoughtAssault:{
+		hit: 5,
+		preCombat: 30
+	},
+	dreadnoughtGround:{
+		hit: 5,
+		preCombat: 30,
+		blockedByPds: true
+	},
+	fighter:{
+		hit: 9
+	},
+	ground:{
+		hit: 8
+	},
+	mechanized:{
+		hit: 6,
+		hitCount: 2
+	},
+	pds:{
+		hit: 6,
+		preCombat:10
+	},
+	pdsGround:{
+		hit: 6,
+		preCombat:10
+	},
+	shock:{
+		hit: 5
+	},	
+	warsun:{
+		hit: 3,
+		hitCount: 3
+	},
+	warsunGround:{
+		hit: 3,
+		hitCount: 3,
+		preCombat: 20
+	},
+	//flagships
+	flagshipArborec:{
+		hit: 6,
+		hitCount: 2
+	},
+	flagshipCreuss:{
+		hit: 4
+	},
+	flagshipHacan:{
+		hit: 7,
+		hitCount: 3
+	},
+	flagshipJolnar:{
+		hit: 2,
+		hitCount: 2,
+		when:{
+			dice: 10,
+			addHits: 3
+		}
+	},
+	flagshipLetnev:{
+		hit: 5,
+		hitCount: 2
+	},
+	flagshipLizix:{
+		hit: 5,
+		hitCount: 3 //special ability is separate
+	},
+	flagshipMentak:{
+		hit: 5,
+		hitCount: 2
+	},
+	flagshipMuaat:{
+		hit: 5,
+		hitCount: 3
+	},
+	flagshipNaalu:{
+		hit: 8,
+		hitCount: 2
+	},
+	flagshipNekro:{
+		hit: 9,
+		hitCount: 3
+	},
+	flagshipSaar:{
+		hit: 6,
+		hitCount: 3
+	},
+	flagshipSaarAfb:{
+		hit: 6,
+		hitCount: 4,
+		validTargets: ['fighter'],
+		preCombat: 100
+	},
+	flagshipSardakk:{
+		hit: 5, //discard +1 from sardakk racial and from flagship
+		hitCount: 3
+	},
+	flagshipSol:{
+		hit: 5,
+		hitCount: 3
+	},
+	flagshipWinnu:{
+		hit: 7
+	},
+	flagshipXxcha:{
+		hit: 6,
+		hitCount: 2
+	},
+	flagshipXxchaPds:{
+		inherit: 'pds',
+		range: 1
+	},
+	flagshipYssaril:{
+		hit: 7,
+		hitCount: 2
+	},
+	flagshipYin:{
+		hit: 5,
+		hitCount: 2
+	}
+}
