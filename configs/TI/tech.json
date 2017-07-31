@@ -1,0 +1,515 @@
+//anything with code is handled in effects instead of other places
+{
+	assaultCannon:{
+		color: "red",
+		name: "Assault Cannon",
+		preRequisite: ["deepSpaceCannon", "cybernetics"],
+		changeUnits:{
+			drednought:{
+				weapons_push:["dreadnoughtAssault"]
+			}
+		}
+	},
+	automatedTurrets:{
+		color: "red",
+		name: "Automated Defense Turrets",
+		preRequisite: ["hylarV"],
+		changeWeapons:{
+			destroyerAfb:{
+				hit_add: 2,
+				hitCount_add: 1
+			}
+		}
+	},
+	deepSpaceCannon:{
+		color: "red",
+		name: "Deep Space Cannon",
+		preRequisite: ["hylarV"],
+		changeWeapons:{
+			pds:{
+				range_set: 1
+			}
+		}
+	},
+	duraniumArmor:{
+		color: "red",
+		name: "Duranium Armor",
+		preRequisite: ["deepSpaceCannon"],
+		changePlayer:{
+			effects_push: ["duraniumArmor"]
+		}
+	},
+	gravitonNegator:{
+		color: "red",
+		name: "Graviton Negator",
+		preRequisiteOr: ["assaultCannon","dacxiveAnimators"],
+		changeUnits:{
+			fighter:{
+				groundCombat: true
+			}
+		},
+		changeWeapons:{
+			dreadnoughtGround:{
+				blockedByPds_set: false
+			}
+		}
+	},
+	hylarV:{
+		color: "red",
+		name: "Hylar V Assaul Laser",
+		changeWeapons:{
+			cruiser:{
+				hit_add: 1
+			},
+			destroyer:{
+				hit_add: 1
+			},
+			destroyerAfb:{
+				hit_add: 1
+			}
+		}
+	},
+	magenDefenseGrid:{
+		color: "red",
+		name: "Magen Defense Grid",
+		preRequisite: ["deepSpaceCannon"],
+		changeWeapons:{
+			pds:{
+				hit_add: 1
+			},
+			pdsGround:{
+				hit_add: 1
+			}
+		},
+		changePlayer:{
+			effects_push: ["magenDefenseGrid"]
+		}
+	},
+	warSun:{
+		color: "red",
+		name: "War Sun",
+		preRequisite: ["deepSpaceCannon", "sarweenTools"],
+		changeUnits:{
+			warSun:{
+				buildable: true
+			}
+		}
+	}
+	advancedFighters:{
+		color: "blue",
+		name: "Advanced Fighters",
+		preRequisite: ["typeIVDrive"],
+		changeUnits:{
+			fighter:{
+				speed_set: 2,
+				hasToBeCarried_set: false
+			}
+		},
+		changeWeapons:{
+			fighter:{
+				hit_add: 1
+			}
+		}
+	},
+	antimassDeflectors:{
+		color: "blue",
+		name: "Antimass Deflectors",
+		changePlayer:{
+			effects_push:["antimassDeflectors"]
+		}
+	},
+	fleetLogistics:{
+		color: "blue",
+		name: "Fleet Logistics",
+		preRequisite:["gravitonNegator"],
+		changePlayer:{
+			effects_push:["fleetLogistics"]
+		}
+	},
+	gravityDrive:{
+		color: "blue",
+		name: "Gravity Drive",
+		preRequisite:["antimassDeflectors"],
+		changePlayer:{
+			effects_push:["gravityDrive","gravityDriveEscape"]
+		}
+	},
+	lightWaveDeflector:{
+		color: "blue",
+		name: "Light/Wave Deflector",
+		preRequisite:["xrdTransporters","magenDefenseGrid"],
+		changePlayer:{
+			effects_push:["lightWaveDeflector"]
+		}
+	},
+	maneuveringJets:{
+		color: "blue",
+		name: "Maneuvering Jets",
+		preRequisite:["xrdTransporters"],
+		changePlayer:{
+			effects_push:["maneuveringJetsPdsFar","maneuveringJetsPdsNear","maneuveringJetsMines","maneuveringJetsIonStorm"]
+		}
+	},
+	typeIVDrive:{
+		color: "blue",
+		name: "Type IV Drive",
+		preRequisiteOr:["xrdTransporters","neuralMotivator"],
+		changeUnits:{
+			cruiser:{
+				speed_add: 1
+			},
+			drednought:{
+				speed_add: 1
+			}
+		}
+	},
+	xrdTransporters:{
+		color: "blue",
+		name: "XRD Transporters",
+		preRequisite:["antimassDeflectors"],
+		changeUnits:{
+			carrier:{
+				speed_add: 1
+			}
+		}
+	},
+	cybernetics:{
+		color: "green",
+		name: "Cybernetics",
+		preRequisiteOr: ["stasisCapsules","antimassDeflectors"],
+		changeWeapons:{
+			fighter:{
+				hit_add: 1
+			}
+		}
+	},
+	dacxiveAnimators:{
+		color: "green",
+		name: "Dacxive Animators",
+		preRequisite:["neuralMotivator"],
+		changePlayer:{
+			effects_push:["dacxiveAnimators"]
+		}
+	},
+	genSynthesis:{
+		color: "green",
+		name: "Gen Synthesis",
+		preRequisite:["cybernetics"],
+		changeWeapons:{
+			ground:{
+				hit_add: 1
+			}
+		},
+		changePlayer:{
+			effects_push:["genSynthesis"]
+		}
+	},
+	hyperMetabolism:{
+		color: "green",
+		name: "Hyper Metabolism",
+		preRequisite:["genSynthesis"],
+		changePlayer:{
+			effects_push:["genSynthesisCard","genSynthesisStrategyCounter"]
+		}
+	},
+	neuralComputing:{
+		color: "green",
+		name: "Neural Computing",
+		preRequisite:["neuralMotivator"],
+		changePlayer:{
+			technologyCost_add: -2
+		}
+	},
+	neuralMotivator:{
+		color: "green",
+		name: "Neural Motivator",
+		preRequisiteOr:["stasisCapsules","microTechnology"],
+		changePlayer:{
+			effects_push:["neuralMotivator"]
+		}
+	},
+	stasisCapsules:{
+		color: "green",
+		name: "Stasis Capsules",
+		changeUnits:{
+			cruiser:{
+				capacity_add:1,
+				capacityType_set:["ground"]
+			},
+			drednought:{
+				capacity_add:1,
+				capacityType_set:["ground"]
+			}
+		}
+	},
+	x89BacterialWeapon:{
+		color: "green",
+		name:"X 89 Bacterial Weapon",
+		preRequisiteOr:["transitDiodes","assaultCannon"],
+		changePlayer:{
+			effects_push:["x89BacterialWeapon"]
+		}
+	},
+	enviroCompensator:{
+		color: "yellow",
+		name: "Enviro Compensator",
+		changeUnits:{
+			dock:{
+				buildCapacity_add: 1
+			}
+		}
+	},
+	integratedEconomy:{
+		color: "yellow",
+		name: "Integrated Economy",
+		preRequisite:["microTechnology", "cybernetics"],
+		changePlayer:{
+			effects_push:["integratedEconomyFleet","integratedEconomyGround"]
+		}
+	},
+	gravitonLaserSystem:{
+		color: "yellow",
+		name: "Graviton Laser System",
+		preRequisite:["deepSpaceCannon"],
+		changePlayer:{
+			effects_push:["gravitonLaserSystem"]
+		}
+	},
+	microTechnology:{
+		color: "yellow",
+		name: "Micro Technology",
+		preRequisiteOr:["stasisCapsules","sarweenTools"],
+		changePlayer:{
+			foreignTradeGoods_add: 1
+		}
+	},
+	nanoTechnology:{
+		color: "yellow",
+		name: "Nano Technology",
+		preRequisite:["microTechnology"],
+		changePlayer:{
+			effects_push:["nanoTechnologyActionNullify","nanoTechnologyPlanets"]
+		}
+	},
+	sarweenTools:{
+		color: "yellow",
+		name: "Sarween Tools",
+		preRequisite:["enviroCompensator"],
+		changePlayer:{
+			effects_push:["sarweenTools"]
+		}
+	},
+	transfabrication:{
+		color: "yellow",
+		name: "Transfabrication",
+		changePlayer:{
+			effects_push:["transfabrication"]
+		}
+	},
+	transitDiodes:{
+		color: "yellow",
+		name: "Transit Diodes",
+		preRequisiteOr:["lightWaveDeflector","dacxiveAnimators"],
+		changePlayer:{
+			effects_push:["transitDiodes"]
+		}
+	},
+	beingArborec:{
+		hidden: true,
+		changePlayer:{
+			effects_push:["arborecCantBuildGF","arborecGrantGF"]
+		},
+		changeUnits:{
+			ground:{
+				buildCapacity_set: 1
+			}
+		}
+	},
+	bioplasmosis:{
+		name: "Bioplasmosis",
+		preRequisite: ["beingArborec"],
+		hideIfNoPrereq: true,
+		additionalCost: 3,
+		changePlayer:{
+			effects_push:["bioplasmosis"]
+		}
+	},
+	sporeAcceleration:{
+		name: "Spore Acceleration",
+		preRequisite: ["beingArborec"],
+		hideIfNoPrereq: true,
+		additionalCost: 5,
+		changeUnits:{
+			ground:{
+				buildCapacity_add: 1
+			}
+		}
+	},
+	beingCreuss:{
+		hidden: true,
+		changePlayer:{
+			effects_push:["creussABWormholes","creussWormholesUnrestricted","creussBlocksWormholes"]
+		}
+	},
+	dimensionalSplicers:{
+		name: "Dimensional Splicers",
+		preRequisite: ["beingCreuss"],
+		hideIfNoPrereq: true,
+		additionalCost: 3,
+		changePlayer:{
+			effects_push:["dimensionalSplicers"]
+		}
+	},
+	slaveWormholeGenerator:{
+		name: "Slave Wormhole Generator",
+		preRequisite: ["beingCreuss"],
+		hideIfNoPrereq: true,
+		additionalCost: 5,
+		changePlayer:{
+			effects_push:["slaveWormholeGenerator"]
+		}
+	},
+	beingHacan:{
+		hidden: true,
+		changePlayer:{
+			effects_push:["hacanTradesActionCards","hacanAgreementsCantBeBroken"],
+			foreignTradeGoods_add: 1
+		}
+	},
+	productionCenters:{
+		name: "Production Centers",
+		preRequisite: ["beingHacan"],
+		hideIfNoPrereq: true,
+		additionalCost: 3,
+		changePlayer:{
+			effects_push:["productionCenters"]
+		}
+	},
+	quantumDatahubNode:{
+		name: "Quantum Datahub Node",
+		preRequisite: ["beingHacan"],
+		hideIfNoPrereq: true,
+		additionalCost: 5,
+		changePlayer:{
+			effects_push:["quantumDatahubNode"]
+		}
+	},
+	beingJolnar:{
+		hidden: true,
+		changePlayer:{
+			effects_push:["jolnarReroll","jolnarTechnology"]
+		},
+		changeWeapons:{
+			_all:{
+				hit_add: -1
+			}
+		}
+	},
+	spatialConduitNetwork:{
+		name: "Spatial Conduit Network",
+		preRequisite: ["beingJolnar"],
+		hideIfNoPrereq: true,
+		additionalCost: 6,
+		changePlayer:{
+			effects_push:["spatialConduitNetwork"]
+		}
+	},
+	electroResonanceTurbines :{
+		name: "Electro-Resonance Turbines",
+		preRequisite: ["beingJolnar"],
+		hideIfNoPrereq: true,
+		additionalCost: 2,
+		changePlayer:{
+			effects_push:["electroResonanceTurbines"]
+		}
+	},
+	beingLetnev:{
+		hidden: true,
+		changePlayer:{
+			effects_push:["letnevGFBuff","letnevSpaceBuff"],
+			fleetSupply_add: 1
+		}
+	},
+	l4Disruptors:{
+		name: "L4 Disruptors",
+		preRequisite: ["beingLetnev"],
+		hideIfNoPrereq: true,
+		additionalCost: 6,
+		changePlayer:{
+			effects_pop:["letnevGFBuff"],
+			effects_push:["letnevGFBuffUpgraded"]
+		}
+	},
+	noneuclidianShielding :{
+		name: "Noneuclidian Shielding",
+		preRequisite: ["beingLetnev"],
+		hideIfNoPrereq: true,
+		additionalCost: 4,
+		changePlayer:{
+			effects_push:["noneuclidianShielding"]
+		}
+	},
+	beingLizix:{
+		hidden: true,
+		changePlayer:{
+			startingStrategyAllocation_add: 1,
+			effects_push:["lizixGFAttackingBuff"]
+		},
+		changeUnits:{
+			drednought:{
+				cost_set: 4
+			}
+		},
+		changeWeapons:{
+			drednought:{
+				hit_add: 1
+			}
+		}
+	},
+	dreadnoughtInvasionPod:{
+		name: "Dreadnought Invasion Pod",
+		preRequisite: ["beingLizix"],
+		hideIfNoPrereq: true,
+		additionalCost: 2,
+		changeUnits:{
+			drednought:{
+				capacity_add:1,
+				capacityType_set:["ground"]
+			}
+		}
+	},
+	inheritanceSystems :{
+		name: "Inheritance Systems",
+		preRequisite: ["beingLizix"],
+		hideIfNoPrereq: true,
+		additionalCost: 5,
+		changePlayer:{
+			effects_push:["inheritanceSystems"]
+		}
+	},
+	beingMentak:{
+		hidden: true,
+		changePlayer:{
+			startingFleetSupply_add: 1,
+			effects_push:["mentakStealTG","mentakPreCombatShots"]
+		}
+	},
+	salvageOperations:{
+		name: "Salvage Operations",
+		preRequisite: ["beingMentak"],
+		hideIfNoPrereq: true,
+		additionalCost: 4,
+		changePlayer:{
+			effects_push:["mentakGainTGForBattle","mentakRebuildShips"]
+		}
+	},
+	mirrorComputing :{
+		name: "Mirror Computing",
+		preRequisite: ["beingMentak"],
+		hideIfNoPrereq: true,
+		additionalCost: 4,
+		changePlayer:{
+			tradeGoodMultiplier_set: 2
+		}
+	},
+}
