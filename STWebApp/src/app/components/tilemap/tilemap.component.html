@@ -1,0 +1,5 @@
+<div *ngFor="let row of map.tiles; let x=index">
+  <span *ngFor="let cell of row; let y=index;">
+  <tile *ngIf="cell!=null" [style.left]="x*86.25 +'px'" [style.top]="y*100+(x%2?50:0) +'px'" [tile]="cell"></tile>
+  </span>
+</div>

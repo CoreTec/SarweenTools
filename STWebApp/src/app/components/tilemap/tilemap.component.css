@@ -1,0 +1,9 @@
+tile{
+  position: absolute;
+  width: 115px;
+  /* 241 */
+  height: 100px;
+  /* 209 */
+  display: inline-block;
+  clip-path: polygon(0px 50px, 28.75px 0px, 86.25px 0px, 115px 50px,86.25px 100px,28.75px 100px);
+}
