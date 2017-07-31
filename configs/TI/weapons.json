@@ -1,7 +1,7 @@
 //try to keep names to just 1 word. Second word should be reserved for subtype - see "destroyerAfb"
 {
 	carrier:{
-		hit: 9
+		hit: 9 // making direct edit
 	},
 	cruiser:{
 		hit: 7
