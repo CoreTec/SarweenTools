@@ -1,0 +1,40 @@
+:host{
+    white-space: nowrap;
+}
+
+.column{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.column.odd{
+  margin-top:50px;
+}
+.hex{
+  width: 115px;
+  height: 100px;
+  margin-right:-29px; 
+  position: relative;
+  pointer-events: none;
+  cursor: pointer;
+}
+.hexChild{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.hexClip{  
+  clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%,75% 100%,25% 100%);
+}
+
+.selector{
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.hex.selected .selector,.hex:hover .selector{
+  opacity: 0.8;
+}

@@ -1,0 +1,125 @@
+:host{
+    position: relative;
+    display: block;
+    width:100%;
+    height: 100%;
+    z-index: 9999;
+}
+.buttonGroup{
+    position: absolute;   
+    border-bottom: 2px solid yellow;
+    width: 50%;
+    opacity: 0.7;
+    padding: 0;
+    pointer-events: all;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    animation-name:appearAnimation;
+    animation-duration: 0.4s; 
+    height: 14px;
+}
+@keyframes appearAnimation {
+    from { 
+        height: 3px;  
+        /* width: 10%;  */
+    }
+    to { 
+        height: 14px; 
+        /* width: 50%;  */
+    }
+}
+
+.buttonGroup:hover{
+    opacity: 1;
+}
+.buttonGroup:hover >>> button{
+    opacity: 0.7;
+}
+.buttonGroup >>> button{
+    flex-basis: 0;
+    flex: 1 1 0;
+    overflow: hidden;
+    padding: 1px;
+    margin: 0;
+    font-size: 10px;
+    border: 0 !important;
+    box-shadow: 0 !important;
+    outline: none !important;
+    background-color: green;
+    cursor: pointer;
+}
+
+.buttonGroup >>> button:not(:first-child){
+    margin-left: 1px;
+}
+
+.buttonGroup >>> button:hover{
+    opacity: 1 !important;
+}
+
+.buttonGroup.g1 {
+    left: 25%;
+    transform: translate(0 ,-100%) rotate(0deg);
+    border-bottom-color: red;
+}
+.buttonGroup.g1 >>> button{
+    background-color: red;
+}
+
+.buttonGroup.g2{    
+    left: 75%;
+    top: 0;
+    transform: translate(0,-100%) rotate(60deg);
+    transform-origin: bottom left;
+    border-bottom-color: green;
+}
+.buttonGroup.g2 >>> button{
+    background-color: green;
+}
+
+.buttonGroup.g3{    
+    left: 100%;
+    top: 50%;
+    transform: translate(0,-100%) rotate(120deg);
+    transform-origin: bottom left;
+    border-bottom-color: blue;
+}
+.buttonGroup.g3 >>> button{
+    background-color: blue;
+}
+
+.buttonGroup.g4{
+    left: 75%;
+    top:100%;
+    transform: translate(0 ,-100%) rotate(180deg);
+    transform-origin: bottom left;
+    border-bottom-color: red;
+}
+.buttonGroup.g4 >>> button{
+    background-color: red;
+}
+
+
+.buttonGroup.g5{    
+    left: 25%;
+    top:100%;
+    transform: translate(0,-100%) rotate(240deg);
+    transform-origin: bottom left;
+    border-bottom-color: green;
+}
+.buttonGroup.g5 >>> button{
+    background-color: green;
+}
+
+
+.buttonGroup.g6{    
+    left: 0;
+    top: 50%;
+    transform: translate(0,-100%) rotate(-60deg);
+    transform-origin: bottom left;
+    border-bottom-color: blue;
+}
+.buttonGroup.g6 >>> button{
+    background-color: blue;
+}

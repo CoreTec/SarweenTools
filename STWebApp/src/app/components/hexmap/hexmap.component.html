@@ -1,0 +1,11 @@
+
+<div class="column" *ngFor="let row of data; let x=index" [class.odd]="x%2===0">
+    <div class="hex" *ngFor="let hex of row; let y=index" [class.selected]="selection===hex">
+        <div class="hexChild hexClip selector" (click)="onClick(hex)">
+            <ng-container [ngTemplateOutlet]="itemTemplate" [ngOutletContext]="{$implicit:hex}"></ng-container> 
+        </div>
+        <div class="hexChild" *ngIf="editorTemplate!=null && selection===hex">
+            <ng-container [ngTemplateOutlet]="editorTemplate" [ngOutletContext]="{$implicit:hex}"></ng-container>
+        </div>
+    </div>
+</div>
