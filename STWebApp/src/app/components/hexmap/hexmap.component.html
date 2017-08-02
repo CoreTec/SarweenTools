@@ -4,7 +4,7 @@
         <div class="hexChild hexClip selector" (click)="onClick(hex)">
             <ng-container [ngTemplateOutlet]="itemTemplate" [ngOutletContext]="{$implicit:hex}"></ng-container> 
         </div>
-        <div class="hexChild" *ngIf="editorTemplate!=null && selection===hex">
+        <div class="hexChild" *ngIf="editorTemplate!=null && selection!=null && selection===hex">
             <ng-container [ngTemplateOutlet]="editorTemplate" [ngOutletContext]="{$implicit:hex}"></ng-container>
         </div>
     </div>

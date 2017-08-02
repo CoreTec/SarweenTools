@@ -8,13 +8,26 @@ import { Component } from '@angular/core';
               </ng-template>
               <ng-template #editor let-hex>
                 <hexmenu [model]="hex">
-                  <button g1> 
-                    qwe
+                  <button g5> 
+                    {{hex.system}}
                   </button>   
                   <button g2 class="fa fa-times"></button>
                   <button g2 class="fa fa-arrow-right"></button>           
                   <button g6 class="fa fa-times"></button>
                   <button g6 class="fa fa-arrow-right"></button>
+
+                  
+                  <button g4 >1</button>
+                  <button g4 >2</button>   
+                  <button g4 >3</button>   
+                  <button g4 >4</button>   
+
+                  <button g3 >1</button>                  
+                  <button g3 >2</button>   
+                  <button g3 >3</button>   
+                  <button g3 >4</button> 
+
+                  <input g1 style="width:50px;font-size:6px" placeholder="type name" [(ngModel)]="hex.system"/> 
                 </hexmenu>
               </ng-template>
              </hexmap>`
