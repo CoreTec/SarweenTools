@@ -1,2 +1,2 @@
-export * from './hexmap/hexmap.component'
-export * from './hexmenu/hexmenu.component'
+export * from './tile/tile.component'
+export * from './tilemenu/tilemenu.component'

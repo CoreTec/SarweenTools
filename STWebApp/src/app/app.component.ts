@@ -4,18 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `<hexmap [data]="data">
               <ng-template #hex let-hex>
-                <img *ngIf="hex" src="/assets/{{hex.system}}.png" style="width:100%;height:100%"/>
+                <tile *ngIf="hex" [model]="hex"></tile>
               </ng-template>
               <ng-template #editor let-hex>
-                <hexmenu [model]="hex">
-                  <button g1> 
-                    qwe
-                  </button>   
-                  <button g2 class="fa fa-times"></button>
-                  <button g2 class="fa fa-arrow-right"></button>           
-                  <button g6 class="fa fa-times"></button>
-                  <button g6 class="fa fa-arrow-right"></button>
-                </hexmenu>
+                <tilemenu [model]="hex"></tilemenu>
               </ng-template>
              </hexmap>`
 })
@@ -31,7 +23,7 @@ export class AppComponent {
           continue;
         }
         var rnd=Math.round( Math.random()*2);
-        this.data[q][w] = { content: "qwe",system:"tile" + rnd,test:0 };
+        this.data[q][w] = { content: 0, system:"tile" + rnd,test:0 };
       }
     }
   }

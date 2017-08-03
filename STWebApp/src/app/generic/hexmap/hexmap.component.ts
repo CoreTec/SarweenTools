@@ -11,6 +11,8 @@ export class HexMapComponent {
   @ContentChild("hex") itemTemplate: TemplateRef<ElementRef>;
   @ContentChild("editor") editorTemplate: TemplateRef<ElementRef>;
   onClick(hex){
-    this.selection = hex;
+    if(this.selection===hex)
+      this.selection=null;
+    else this.selection = hex;
   };
 }
