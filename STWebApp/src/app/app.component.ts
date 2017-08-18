@@ -7,32 +7,7 @@ import { Component } from '@angular/core';
                 <tile *ngIf="hex" [model]="hex"></tile>
               </ng-template>
               <ng-template #editor let-hex>
-<<<<<<< HEAD
                 <tilemenu [model]="hex"></tilemenu>
-=======
-                <hexmenu [model]="hex">
-                  <button g5> 
-                    {{hex.system}}
-                  </button>   
-                  <button g2 class="fa fa-times"></button>
-                  <button g2 class="fa fa-arrow-right"></button>           
-                  <button g6 class="fa fa-times"></button>
-                  <button g6 class="fa fa-arrow-right"></button>
-
-                  
-                  <button g4 >1</button>
-                  <button g4 >2</button>   
-                  <button g4 >3</button>   
-                  <button g4 >4</button>   
-
-                  <button g3 >1</button>                  
-                  <button g3 >2</button>   
-                  <button g3 >3</button>   
-                  <button g3 >4</button> 
-
-                  <input g1 style="width:50px;font-size:6px" placeholder="type name" [(ngModel)]="hex.system"/> 
-                </hexmenu>
->>>>>>> 4a3f38ef2308395434aab37574e069d2016b3c34
               </ng-template>
              </hexmap>`
 })
